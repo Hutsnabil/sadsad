@@ -28,6 +28,12 @@ function getRandomArbitrary(min, max) {
 }
 bot.on('login',function(){
 	console.log("Logged In")
+    bot.on('chat', (username, message) => {
+        console.log(`${username} said "${message}"`)
+      })
+      
+      bot.chat("/register 1234")
+      bot.chat("/login 1234")
 });
 bot.on('time', function() {
     if (connected <1) {
@@ -60,12 +66,6 @@ bot.on('time', function() {
 bot.on('spawn',function() {
     connected=1;
 });
-bot.on('chat', (username, message) => {
-    console.log(`${username} said "${message}"`)
-  })
-  
-  bot.chat("/register 1234")
-  bot.chat("/login 1234")
 
 
 // for heroku
