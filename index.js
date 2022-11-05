@@ -31,9 +31,13 @@ bot.on('login',function(){
     bot.on('chat', (username, message) => {
         console.log(`${username} said "${message}"`)
       })
-      
-      bot.chat("/register 1234")
-      bot.chat("/login 1234")
+      console.log("Starting ..")
+      try{
+        bot.chat("/register 1234")
+        bot.chat("/login 1234")
+      } catch (e){
+        console.log(e)
+      }
 });
 bot.on('time', function() {
     if (connected <1) {
